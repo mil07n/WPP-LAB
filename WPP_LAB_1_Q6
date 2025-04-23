@@ -1,0 +1,26 @@
+import pandas as pd
+num_of_points=int(input("enter the number of points needed::"))
+print("enter all X-coord into a list")
+print("enter all Y-coord into a list")
+print("enter all Z-coord into a list")
+x_coord=[]
+y_coord=[]
+z_coord=[]
+for i in range(num_of_points+1):
+    x=int(input("enter the x coord::"))
+    y=int(input("enter the y coord::"))
+    z=float(input("enter the z coord::"))
+    x_coord.append(x)
+    y_coord.append(y)
+    z_coord.append(z)
+min_dis=(x_coord[0]-x_coord[0])+(y_coord[0]-y_coord[0])+(y_coord[0]-y_coord[0])
+point=0
+#distance formula=Root(x2-x1)+(y2-y1)+(z2-z1)
+for m in range(num_of_points+1):
+    for j in range(num_of_points+1):
+        distance=0.5((x_coord[i]-x_coord[j])+(y_coord[i]-y_coord[j])+(y_coord[i]-y_coord[j]))
+        if (distance<min_dis):
+            min_dis=distance
+            point=j
+print("the points that is the closest to the point is ",j)
+print(min_dis)
